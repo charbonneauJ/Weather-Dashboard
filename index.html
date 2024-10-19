@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./assets/css/reset.css" />
     <link
       href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap"
       rel="stylesheet"
@@ -20,24 +21,29 @@
   </head>
 
   <body>
-    <nav class="navbar bg-body-tertiary">
+    <div class="navbar-brand mb-0 h1">Weather Dashboard</div>
       <div class="container-fluid">
-        <span class="navbar-brand mb-0 h1">Weather App</span>
       </div>
     </nav>
     <div class="container">
       <div class="row">
-        <div class="col-md-3 border">
-          <input id="search-input" type="text" />
-          <button id="search-button">Search</button>
-          <ul id="search-history"></ul>
+        <div class="col-md-3">
+          <h2><strong>Search for City:</strong></h2>
+          <div class="d-grid gap-2">
+          <input id="search-input" placeholder="Atlanta" type="text" />
+          <button id="search-button" class="btn btn-primary">Search</button>
+        </div>
+        <hr>
+          <div id="search-history" class="d-grid gap-2"></div>
         </div>
         <div class="col-md-9 border">
           <section>
-            <h2>Current Weather</h2>
+            <h2>Current Weather:</h2>
             <div id="current-weather"></div>
           </section>
-          <section id="forecast" class="row"></section>
+          <h2>5-Day Forecast:</h2>
+          <section id="forecast" class="row row-cols-lg-5 g-lg-3 justify-content-between">
+          </section>
         </div>
       </div>
     </div>

@@ -1,15 +1,25 @@
-/* adding color to forcast card */
-.forecast_containers {
-  background-color: rgb(149, 221, 155);
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f8ff; /* Light sky blue */
+  color: #333; /* Dark text for contrast */
+  line-height: 1.6;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  background-color: #1e90ff; 
+  padding: 15px;
 }
 
 
-.past_searches{
-  color: black;
-  background-color: grey;
-  margin: 2px;
-  margin-top: 5px;
-  text-align: center;
-  padding: 2px;
-  border-radius: 5px;
+.navbar-brand {
+  font-size: 2rem;
+  color: rgb(26, 13, 204); 
+  text-align: center; 
+  text-transform: uppercase;
+  letter-spacing: 1px; 
+  margin: 0; 
+  background: linear-gradient(to right, #5250d8, #bacde9);
 }

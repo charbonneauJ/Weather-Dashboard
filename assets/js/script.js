@@ -26,6 +26,8 @@ function populateSearchHistory(data) {
   for (let i = 0; i < data.length; i++) {
     const city = data[i];
     const button = document.createElement("button");
+    button.classList.add("btn");
+    button.classList.add("btn-secondary");
     button.textContent = city;
     button.addEventListener("click", function () {
       getCoordinates(city);
@@ -34,16 +36,17 @@ function populateSearchHistory(data) {
   }
 }
 
-function populateCurrentWeather(data) {
+function populateCurrentWeather(data, city) {
   const currentWeatherEl = document.getElementById("current-weather");
   currentWeatherEl.innerHTML = "";
   const currentDayEl = document.createElement("div");
   currentDayEl.innerHTML = `
-    <h2>${data.city} (${new Date().toLocaleDateString()})</h2>
-    <p>Temp: ${data.main.temp}</p>
-    <p>Wind: ${data.wind.speed}</p>
-    <p>Humidity: ${data.main.humidity}</p>
-    <p>UV Index: ${data.main.uvi}</p>
+    <h2>${city} (${new Date().toLocaleDateString()})<img src = "https://openweathermap.org/img/wn/${
+    data.weather[0].icon
+  }.png"/></h2>
+    <p>Temp: ${data.main.temp} °F</p>
+    <p>Wind: ${data.wind.speed} MPH</p>
+    <p>Humidity: ${data.main.humidity}%</p>
     `;
   currentWeatherEl.appendChild(currentDayEl);
 }
@@ -54,11 +57,20 @@ function populateForecast(array) {
   for (let i = 0; i < array.length; i++) {
     const day = array[i];
     const dayEl = document.createElement("div");
+    dayEl.classList.add("col-lg-2");
+    dayEl.classList.add("col-md-4");
+    dayEl.classList.add("bg-info");
+    dayEl.classList.add("bg-gradient");
+    dayEl.classList.add("border-info");
+    dayEl.classList.add("rounded");
     dayEl.innerHTML = `
-        <h3>${day.dt_txt}</h3>
-        <p>Temp: ${day.main.temp}</p>
-        <p>Wind: ${day.wind.speed}</p>
-        <p>Humidity: ${day.main.humidity}</p>
+        <h5>${new Date(day.dt * 1000).toLocaleDateString()}</h5>
+        <img src = "https://openweathermap.org/img/wn/${
+          day.weather[0].icon
+        }.png"/>
+        <p>Temp: ${day.main.temp} °F</p>
+        <p>Wind: ${day.wind.speed} MPH</p>
+        <p>Humidity: ${day.main.humidity}%</p>
         `;
     forecastEl.appendChild(dayEl);
   }
@@ -79,7 +91,12 @@ const getForecast = function (lat, lon) {
         filterData.push(element);
       }
       filterData.push(data.list.at(-1));
-      populateCurrentWeather(filterData[0]);
+      if (!searchHistory.includes(data.city.name)) {
+        searchHistory.push(data.city.name);
+        writing(data.city.name);
+        populateSearchHistory(searchHistory);
+      }
+      populateCurrentWeather(filterData[0], data.city.name);
       populateForecast(filterData.slice(1));
     });
 };
@@ -102,3 +119,5 @@ searchButtonEL.addEventListener("click", function () {
   const searchValue = searchInputEL.value;
   getCoordinates(searchValue);
 });
+
+init();
