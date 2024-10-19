@@ -78,7 +78,7 @@ function populateForecast(array) {
 
 const getForecast = function (lat, lon) {
   console.log(lat, lon);
-  const weatherURL = `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=imperial&appid=${apiKey}`;
+  const weatherURL = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=imperial&appid=${apiKey}`;
 
   fetch(weatherURL)
     .then(function (response) {
@@ -102,7 +102,7 @@ const getForecast = function (lat, lon) {
 };
 
 const getCoordinates = function (cityName) {
-  const geoURL = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${apiKey}`;
+  const geoURL = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${apiKey}`;
 
   fetch(geoURL)
     .then(function (response) {
