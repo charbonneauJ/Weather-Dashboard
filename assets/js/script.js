@@ -41,7 +41,7 @@ function populateCurrentWeather(data, city) {
   currentWeatherEl.innerHTML = "";
   const currentDayEl = document.createElement("div");
   currentDayEl.innerHTML = `
-    <h2>${city} (${new Date().toLocaleDateString()})<img src = "https://openweathermap.org/img/wn/${
+    <h2>${city} (${new Date().toLocaleDateString()})<img src = "http://openweathermap.org/img/wn/${
     data.weather[0].icon
   }.png"/></h2>
     <p>Temp: ${data.main.temp} °F</p>
@@ -65,7 +65,7 @@ function populateForecast(array) {
     dayEl.classList.add("rounded");
     dayEl.innerHTML = `
         <h5>${new Date(day.dt * 1000).toLocaleDateString()}</h5>
-        <img src = "https://openweathermap.org/img/wn/${
+        <img src = "http://openweathermap.org/img/wn/${
           day.weather[0].icon
         }.png"/>
         <p>Temp: ${day.main.temp} °F</p>
