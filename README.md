@@ -2,7 +2,7 @@
 
 This is my Weather Dashboard! It is my submission for the Week 6 challenge on Server Side APIs using HTML/CSS/JS. I use a third party API to allow a weather dashboard for users to check the weather, and review their previous searches. Please enjoy!
 
-##Demo
+## Demo
 
 https://charbonneauj.github.io/Weather-Dashboard/
 
