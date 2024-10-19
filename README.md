@@ -1,6 +1,5 @@
 # 06 Server-Side APIs: Weather Dashboard
 
-<<<<<<< HEAD
 ## Your Task
 
 Third-party APIs allow developers to access their data and functionality by making requests with specific parameters to a URL. Developers are often tasked with retrieving data from another application's API and using it in the context of their own. Your challenge is to build a weather dashboard that will run in the browser and feature dynamically updated HTML and CSS.
@@ -101,8 +100,3 @@ You are required to submit BOTH of the following for review:
 
 - - -
 © 2024 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
-=======
-## John Charbonneau
-
-Started strong and didn't give myself the appropriate time. I absolutely loved this homework.
->>>>>>> 4cc91fbc4962d8290854566b4c85260de9d30098
