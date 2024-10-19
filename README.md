@@ -8,7 +8,7 @@ https://charbonneauj.github.io/Weather-Dashboard/
 
 ## Screenshots
 
-![Week 6 Challenge](https://github.com/user-attachments/assets/f838d029-51f3-46da-84f1-083dc13bccf5)
+![Week 6 Challenge](https://github.com/user-attachments/assets/b320c3c5-d091-4408-8cad-af963a4eedae)
 
 
 ## 🚀 About Me
